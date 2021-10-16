@@ -13,7 +13,7 @@ namespace SimpleWebSearch
     class Main : IPlugin
     {
         private PluginInitContext context;
-        private string searchSuggestionsBaseUrl = "http://clients1.google.com/complete/search?hl=en&output=toolbar&q=";
+        private string searchSuggestionsBaseUrl = "https://ac.ecosia.org/?q=";
 
         public void Init(PluginInitContext context)
         {
@@ -63,7 +63,7 @@ namespace SimpleWebSearch
                 Score = score,
                 Action = e =>
                 {
-                    Process.Start("http://google.com/search?q=" + HttpUtility.UrlEncode(query.ToString()));
+                    Process.Start("https://www.ecosia.org/search?q=" + HttpUtility.UrlEncode(query.ToString()));
                     return true;
                 }
             });
